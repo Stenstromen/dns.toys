@@ -1,3 +1,41 @@
+# dns.toys fork with Dockerfile
+
+Built for dns.toys.stenstromen.se
+
+## Docker
+
+### Demo
+
+Demo available at Stenstromen/dnstoys. (linux/arm64)
+
+```
+docker run -d --rm -p 5354:5354/udp stenstromen/dnstoys:latest
+```
+
+### Clone
+
+```
+git clone https://github.com/Stenstromen/dnstoys.git
+```
+
+### Build
+
+```
+docker build -t dnstoys dnstoys/.
+```
+
+### Run
+
+```
+docker run -d --rm -p 5354:5354/udp dnstoys
+```
+
+### Connect
+
+```
+dig help @localhost -p5354
+```
+
 <img width="150" src="https://user-images.githubusercontent.com/547147/171995179-b9d2faae-d659-4260-99df-04c62c171f6f.png" />
 
 dns.toys is a DNS server that takes creative liberties with the DNS protocol to offer handy utilities and services that are easily accessible via the command line.
