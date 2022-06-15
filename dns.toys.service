@@ -1,0 +1,19 @@
+Description=dns.toys service
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/dns.toys
+ExecStart=/opt/dns.toys/dnstoys.bin
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=dns.toys
+User=root
+Group=root
+Environment=PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+
+[Install]
+WantedBy=multi-user.target
